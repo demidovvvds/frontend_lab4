@@ -1,0 +1,23 @@
+body {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.numbers {
+  margin: 0;
+  padding-left: 40px;
+
+  li {
+    line-height: 1.6;
+  }
+}
+
+.loop(@i) when (@i =< 100) {
+  .numbers li:nth-child(@{i}) {
+    color: rgb(@i, 256 - @i, 0);
+  }
+
+  .loop(@i + 1);
+}
+
+.loop(1);
